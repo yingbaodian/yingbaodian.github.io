@@ -19,24 +19,11 @@
     var temp = getUrlParam('temp');
     //if(document.referrer){
     var temp_name = temp +'.html';
-    Dget('//imgkbc.bj.bcebos.com/j/'+temp_name,function(res){
+    Dget('https://hbb2.oss-cn-beijing.aliyuncs.com/jb/'+temp_name+'?n='+new Date().getTime(),function(res){
         var doc=document.open("text/html","replace")
         doc.write(res);
         doc.close()
     })
-	function add_cnzz(site_id) {
-    var hm = document.createElement("script");
-    hm.src = "https://s4.cnzz.com/z_stat.php?id=" + site_id;
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
-
-    var cnzz_span = document.createElement('span');
-    cnzz_span.id = "cnzz_stat_icon_" + site_id;
-    cnzz_span.style.display = "none"
-
-    document.body.appendChild(cnzz_span);
-}
-add_cnzz(1279189134)
     //}
 
 </script>
